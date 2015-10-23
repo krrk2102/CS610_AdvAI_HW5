@@ -1,0 +1,12 @@
+likes(X, Y) :- married(X, Y), not ab( d(X, Y) ), not -likes(X, Y).
+-likes(X, Y) :- hates(X, Y).
+married(X, Y) :- married(Y, X).
+:- married(X, X).
+ab( d(X, Y) ) :- married(X, Y), hates(X, Y).
+ab( d(X, Y) ) :- married(X, Y), -followRules(X).
+
+married(bob, mary).
+hates(bob, mary).
+married(john, susan).
+married(arnold, kate).
+-followRules(kate).
